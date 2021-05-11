@@ -3,6 +3,7 @@ library(janitor)
 library(dplyr)
 library(ggplot2)
 library(readr)
+library(tidyr)
 
 kentucky_counties <- counties(state = "KY") %>%
   clean_names()
@@ -11,26 +12,26 @@ broadband <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytue
 
 broadband <- broadband %>%
   clean_names() %>%
+  rename(
+    avail = broadband_availability_per_fcc,
+    usage = broadband_usage
+  ) %>%
   mutate(
-    usage = as.numeric(broadband_usage),
-    avail = as.numeric(broadband_availability_per_fcc)
+    usage = as.numeric(usage),
+    avail = as.numeric(avail)
   )
 
 broadband_ky <- broadband %>%
-  filter(st == "KY")
+  filter(st == "KY") %>%
+  pivot_longer(avail:usage, names_to = "var")
 
-X <- kentucky_counties %>%
+ky_counties_broadband <- kentucky_counties %>%
   left_join(broadband_ky, by = c("namelsad" = "county_name"))
 
-X %>%
+ky_counties_broadband %>%
   ggplot() +
-  geom_sf(aes(fill = usage)) +
+  geom_sf(aes(fill = value)) +
+  scale_fill_viridis_c() +
+  facet_wrap(~var) +
   theme_void() +
-  theme(legend.position = "top")
-
-X %>%
-  ggplot() +
-  geom_sf(aes(fill = avail)) +
-  scale_fill_gradient(low = "white", high = "blue") +
-  theme_void() +
-  theme(legend.position = "top")
+  theme(legend.position = "bottom")
