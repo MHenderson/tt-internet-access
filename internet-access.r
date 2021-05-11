@@ -31,14 +31,14 @@ ky_counties_broadband <- kentucky_counties %>%
   left_join(broadband_ky, by = c("namelsad" = "county_name"))
 
 base_size <- 12
-font1 <- "Titillium Web"
+font1 <- "Cardo"
 background_colour <- "#eff2f7"
 text_colour <- "#10192d"
 
 dat_text <- data.frame(
   label = c(
-    "Have access to fixed terrestrial broadband\nas of end of 2017.",
-    "Use the internet at broadband speeds\nas of November 2019."
+    "Have access to fixed terrestrial broadband\nas of end of 2017.*",
+    "Use the internet at broadband speeds\nas of November 2019.**"
   ),
   var  = c("Availability", "Usage"),
   x = c(-91, -91),
@@ -48,14 +48,15 @@ dat_text <- data.frame(
 p <- ky_counties_broadband %>%
   ggplot() +
   geom_sf(aes(fill = value)) +
-  scale_fill_viridis_c(labels = percent) +
+  scale_fill_viridis_c(labels = percent, option = "cividis") +
   facet_wrap(~var, ncol = 1) +
-  geom_text(data = dat_text, aes(x = x, y = y, label = label, family = font1, size = base_size, hjust = 0),show.legend = FALSE) +
+  geom_text(data = dat_text, aes(x = x, y = y, label = label, family = font1, size = base_size, hjust = 0), show.legend = FALSE) +
   theme_void() +
   theme(legend.position = "bottom") +
   labs(
     title = "Internet Access in Kentucky",
-    subtitle = "Data: Microsoft | Graphic: Matthew Henderson"
+    subtitle = "Data: Microsoft/FCC | Graphic: Matthew Henderson",
+    caption = "*https://www.fcc.gov/document/broadband-deployment-report-digital-divide-narrowing-substantially-0\n**https://github.com/microsoft/USBroadbandUsagePercentages"
   ) +
   theme(
     plot.margin       = margin(t = 20, r = 15, b = 20, l = 15, unit = "pt"),
@@ -65,8 +66,11 @@ p <- ky_counties_broadband %>%
     strip.background  = element_rect(colour = background_colour, fill = background_colour),
     plot.title        = element_text(colour = text_colour, size = 26, hjust = 1, family = font1, margin = margin(5, 0, 20, 0)),
     plot.subtitle     = element_text(colour = text_colour, size = base_size, hjust = 1, family = font1, margin = margin(5, 0, 10, 0)),
-    plot.caption      = element_text(colour = text_colour, size = base_size, hjust = 0.5, family = font1),
+    plot.caption      = element_text(colour = text_colour, size = 10, hjust = 0, family = font1),
     legend.title      = element_blank(),
+    legend.justification = "right",
+    legend.margin     = margin(0, 0, 0, 0),
+    legend.box.margin = margin(t = 15, r = 15, b = 0, l = 0, unit = "pt"),
     strip.text        = element_blank(),
     legend.position   = "bottom",
     legend.key.width  = unit(1, 'cm'),
@@ -77,10 +81,10 @@ p <- ky_counties_broadband %>%
     axis.ticks.x      = element_blank(),
     axis.ticks.y      = element_blank(),
     panel.grid.major  = element_blank(),
-    panel.grid.minor  = element_blank()
+    panel.grid.minor  = element_blank(),
   )
 
-agg_png(here::here("internet-access.png"), res = 300, height = 8, width = 7, units = "in")
+agg_png(here::here("internet-access.png"), res = 300, height = 7.7, width = 7, units = "in")
 print(p)
 dev.off()
 
