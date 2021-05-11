@@ -47,7 +47,7 @@ dat_text <- data.frame(
 
 p <- ky_counties_broadband %>%
   ggplot() +
-  geom_sf(aes(fill = value)) +
+  geom_sf(aes(fill = value), size = .2) +
   scale_fill_viridis_c(labels = percent, option = "cividis") +
   facet_wrap(~var, ncol = 1) +
   geom_text(data = dat_text, aes(x = x, y = y, label = label, family = font1, size = base_size, hjust = 0), show.legend = FALSE) +
