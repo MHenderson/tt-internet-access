@@ -68,6 +68,7 @@ p <- ky_counties_broadband %>%
     plot.subtitle     = element_text(colour = text_colour, size = base_size, hjust = 1, family = font1, margin = margin(5, 0, 10, 0)),
     plot.caption      = element_text(colour = text_colour, size = 10, hjust = 0, family = font1),
     legend.title      = element_blank(),
+    legend.text       = element_text(family = font1),
     legend.justification = "right",
     legend.margin     = margin(0, 0, 0, 0),
     legend.box.margin = margin(t = 15, r = 15, b = 0, l = 0, unit = "pt"),
