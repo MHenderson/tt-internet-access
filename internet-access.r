@@ -85,7 +85,7 @@ p <- ky_counties_broadband %>%
     panel.grid.minor  = element_blank(),
   )
 
-agg_png(here::here("internet-access.png"), res = 300, height = 7.7, width = 7, units = "in")
+agg_png(here::here("plot", "internet-access.png"), res = 300, height = 7.7, width = 7, units = "in")
 print(p)
 dev.off()
 
