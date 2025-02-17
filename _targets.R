@@ -109,6 +109,8 @@ list(
       agg_png("plot/internet-access.png", res = 300, height = 7.7, width = 7, units = "in")
       print(main_plot)
       dev.off()
-    } 
+      "plot/internet-access.png"
+    },
+     format = "file" 
   )
 )

@@ -1,10 +1,10 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-broadband|stem|4291a3aca7acabb7|6ec5e3475d5b88d0|2c530c1562a7fbd1|999963562||t20136.4030278657s|s34998b|34998|rds|local|vector|||3.032||
-ky_counties|stem|2e04adb1df860856|acc8709522525f38|2c530c1562a7fbd1|1640274336||t20136.4037859188s|s3025430b|3025430|rds|local|vector|||65.018||
-broadband_clean|stem|e18318cd2370b682|3805296f52c337da|8490118e032549f1|-926734521||t20136.4037892522s|s35162b|35162|rds|local|vector|||0.259|There were 2 warnings in mutate.The first warning wasℹ In argument Usage  as.numericUsage.Caused by warning NAs introduced by coercionℹ Run dplyrlast_dplyr_warnings to see the 1 remaining warning.|
-broadband_ky|stem|63441c3ac7a70227|3e9fe9e9b8d6162d|6e86b67786566474|-1478159110||t20136.4037895299s|s2170b|2170|rds|local|vector|||0.014||
-ky_counties_broadband|stem|23f1b399b2341242|6cef0be9f968cc8c|71d13e29acdca77c|1268581275||t20136.4043614264s|s5241841b|5241841|rds|local|vector|||0.028||
-dat_text|stem|14ccb5022c3405fa|6691d57974aad1f9|2c530c1562a7fbd1|-908504645||t20136.4106883192s|s266b|266|rds|local|vector|||2.177||
-main_plot|stem|f5d8ed6be1e1cbab|af77e01af55651e5|6fabb03d40c0cd97|-973856271||t20136.411362806s|s21183137b|21183137|rds|local|vector|||0.137||
-.Random.seed|object|aedea70c0873437d
-save_main_plot|stem|be1ef4b8a83de400|5d8dab7fff19b0c7|7eb4c72429a76b78|-7430601||t20136.412791739s|s83b|83|rds|local|vector|||2.885||
+dat_text|stem|14ccb5022c3405fa|6691d57974aad1f9|2c530c1562a7fbd1|-908504645||t20136.419754s|s266b|266|rds|local|vector|||2.077||
+broadband|stem|4291a3aca7acabb7|6ec5e3475d5b88d0|2c530c1562a7fbd1|999963562||t20136.4197661759s|s34998b|34998|rds|local|vector|||0.996||
+ky_counties|stem|2e04adb1df860856|acc8709522525f38|2c530c1562a7fbd1|1640274336||t20136.4202414531s|s3025430b|3025430|rds|local|vector|||40.508||
+broadband_clean|stem|e18318cd2370b682|3805296f52c337da|8490118e032549f1|-926734521||t20136.4202446012s|s35162b|35162|rds|local|vector|||0.252|There were 2 warnings in mutate.The first warning wasℹ In argument Usage  as.numericUsage.Caused by warning NAs introduced by coercionℹ Run dplyrlast_dplyr_warnings to see the 1 remaining warning.|
+broadband_ky|stem|63441c3ac7a70227|3e9fe9e9b8d6162d|6e86b67786566474|-1478159110||t20136.420244879s|s2170b|2170|rds|local|vector|||0.016||
+ky_counties_broadband|stem|23f1b399b2341242|6cef0be9f968cc8c|71d13e29acdca77c|1268581275||t20136.4202576105s|s5241841b|5241841|rds|local|vector|||0.245||
+main_plot|stem|948b284e9aa8ba1a|af77e01af55651e5|6fabb03d40c0cd97|-973856271||t20136.4202990919s|s21183892b|21183892|rds|local|vector|||0.136||
+.Random.seed|object|162d06d59459c7b4
+save_main_plot|stem|45ff4beb5ad77ac7|31e1bccc7c76acbd|85a6b39cb80eb4c7|-7430601|plot/internet-access.png|t20136.4209788132s|s564853b|564853|file|local|vector|||2.493||
