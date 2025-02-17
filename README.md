@@ -1,3 +1,3 @@
-## Internet Access
+## tt-internet-access
 
-![](internet-access.png)
+![](plot/internet-access.png)
